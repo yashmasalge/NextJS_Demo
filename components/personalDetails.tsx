@@ -1,17 +1,12 @@
 // pages/PersonalDetails.tsx
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation'
+import { useFormData } from '../context/FormDataContext';
 
 
 const PersonalDetails = () => {
     const router = useRouter()
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    address: ''
-  });
+  const {formData, setFormData} = useFormData();
 
   useEffect(() => {
     const savedData = localStorage.getItem('personalDetails');

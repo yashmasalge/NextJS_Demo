@@ -1,17 +1,12 @@
 // pages/DisplayData.tsx
 import { useState, useEffect } from 'react';
+import { useFormData } from '../context/FormDataContext';
 
 const DisplayData = () => {
 
 const [isEditable, setIsEditable] = useState(false);
 
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    address: ''
-  });
+  const {formData, setFormData} = useFormData();
 
   useEffect(() => {
     const savedData = localStorage.getItem('personalDetails');
